@@ -1,11 +1,10 @@
 package com.lyh;
 
 import com.lyh.bean.Info;
-import com.lyh.bean.Manage;
+import com.lyh.bean.Manager;
 import com.lyh.bean.News;
-import com.lyh.bean.User;
 import com.lyh.dao.InfoDao;
-import com.lyh.dao.ManageDao;
+import com.lyh.dao.ManagerDao;
 import com.lyh.dao.NewsDao;
 import com.lyh.dao.UserDao;
 import com.lyh.service.UserService;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -23,7 +21,7 @@ class Fruitshop3ApplicationTests {
     @Autowired
     UserService userService;
     @Autowired
-    ManageDao manageDao;
+    ManagerDao managerDao;
     @Autowired
     InfoDao infoDao;
     @Autowired
@@ -31,8 +29,8 @@ class Fruitshop3ApplicationTests {
 
     @Test
     void contextLoads() {
-        Manage manage = new Manage("admin", "admin");
-        Manage byUsernameAndPassword = manageDao.getByUsernameAndPassword(manage);
+        Manager manager = new Manager("admin", "admin");
+        Manager byUsernameAndPassword = managerDao.getByUsernameAndPassword(manager);
         System.out.println(byUsernameAndPassword);
     }
 

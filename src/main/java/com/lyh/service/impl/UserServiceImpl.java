@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
         User user1 = userDao.getByUsernameAndPassword(user);
 
         if (user1 == null) {
-            return  new Result(Code.LOGIN_ERR,null,"账号或密码错误");
+            return  new Result(Code.LOGIN_ERR,null,"账号或密码错误, 请重试");
         } else {
             return new Result(Code.LOGIN_OK, user1.getId(), "登陆成功~~");
         }

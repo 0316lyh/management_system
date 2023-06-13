@@ -1,7 +1,6 @@
 package com.lyh.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lyh.bean.Manage;
 import com.lyh.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

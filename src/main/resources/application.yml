@@ -6,7 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: "020316"
-    url: jdbc:mysql://localhost:3306/fruitshop3?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306/management_system?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=true
 
 
 #mybatis-plus

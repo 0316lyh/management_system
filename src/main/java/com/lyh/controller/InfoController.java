@@ -29,6 +29,11 @@ public class InfoController {
         return byId;
     }
 
+    /**
+     * 更改用户信息
+     * @param info
+     * @return
+     */
     @PutMapping
     public Result changeInfo(@RequestBody Info info) {
         Result result = infoService.changeInfo(info);

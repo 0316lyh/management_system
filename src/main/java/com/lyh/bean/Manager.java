@@ -6,18 +6,18 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author :liangyuhang1
- * @className :Manage
+ * @className :Manager
  * @date :2023/6/6/16:17
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Manage {
+public class Manager {
     private int id;
     private String username;
     private String password;
 
-    public Manage(String username, String password) {
+    public Manager(String username, String password) {
         this.username = username;
         this.password = password;
     }
