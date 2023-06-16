@@ -11,8 +11,8 @@
     <groupId>com</groupId>
     <artifactId>fruitshop3</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>fruitshop3</name>
-    <description>fruitshop3</description>
+    <name>management system-backend</name>
+    <description>management system-backend</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.2.16</version>
+            <version>1.2.13</version>
         </dependency>
 
 
