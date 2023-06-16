@@ -50,4 +50,28 @@ public class NewsController {
         Result byId = newsService.getById(id);
         return byId;
     }
+
+    /**
+     * 根据ID删除
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/{id}")
+    public Result deleteById(@PathVariable int id) {
+        Result result = newsService.deleteById(id);
+        return result;
+    }
+
+    /**
+     * 修改公告
+     * @param news
+     * @return
+     */
+    @PutMapping
+    public Result changeNews(@RequestBody News news) {
+        Result result = newsService.changeNews(news);
+        return  result;
+    }
+
 }

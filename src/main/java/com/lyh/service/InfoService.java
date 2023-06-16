@@ -23,4 +23,9 @@ public interface InfoService {
      */
     Result changeInfo(Info info);
 
+    /**
+     * 获取所有员工信息
+     * @return
+     */
+    Result getAll();
 }

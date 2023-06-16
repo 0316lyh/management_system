@@ -65,4 +65,20 @@ public class MessageServiceImpl implements MessageService {
             return new Result(Code.DELETE_ERR, null, "删除失败...");
         }
     }
+
+    /**
+     * 根据id查留言内容
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result getContentById(int id) {
+        String content = messageDao.getContentById(id);
+        if (content != null && content != "") {
+            return new Result(Code.GET_OK, content, "查询留言内容成功");
+        } else {
+            return  new Result(Code.GET_ERR, null, "查询留言内容失败");
+        }
+    }
 }

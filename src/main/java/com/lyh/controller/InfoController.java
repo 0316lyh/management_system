@@ -39,4 +39,15 @@ public class InfoController {
         Result result = infoService.changeInfo(info);
         return result;
     }
+
+
+    /**
+     * 获取所有员工信息
+     * @return
+     */
+    @GetMapping
+    public Result getAll() {
+        Result all = infoService.getAll();
+        return all;
+    }
 }

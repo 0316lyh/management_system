@@ -27,4 +27,18 @@ public interface NewsService {
      * @return
      */
     Result getById(int id);
+
+    /**
+     * 根据ID删除
+     * @param id
+     * @return
+     */
+    Result deleteById(int id);
+
+    /**
+     * 修改公告
+     * @param news
+     * @return
+     */
+    Result changeNews(News news);
 }

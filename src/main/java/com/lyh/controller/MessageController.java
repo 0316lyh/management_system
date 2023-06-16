@@ -34,4 +34,10 @@ public class MessageController {
         Result result = messageService.deleteById(id);
         return result;
     }
+
+    @GetMapping("/{id}")
+    public Result getContentById(@PathVariable int id) {
+        Result contentById = messageService.getContentById(id);
+        return contentById;
+    }
 }

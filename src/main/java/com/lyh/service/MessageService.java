@@ -27,4 +27,12 @@ public interface MessageService {
      * @return
      */
     Result deleteById(int id);
+
+    /**
+     * 根据id查留言内容
+     * @param id
+     * @return
+     */
+    Result getContentById(int id);
+
 }

@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author :liangyuhang1
@@ -49,6 +51,21 @@ public class InfoServiceImpl implements InfoService {
             return new Result(Code.UPDATE_OK, null, "更改信息成功");
         } else {
             return new Result(Code.UPDATE_ERR,null,"更改信息失败!");
+        }
+    }
+
+    /**
+     * 获取所有员工信息
+     *
+     * @return
+     */
+    @Override
+    public Result getAll() {
+        List<Map<String, Object>> maps = infoDao.selectMaps(null);
+        if (maps != null) {
+            return new Result(Code.GET_OK, maps, "查询成功");
+        } else {
+            return new Result(Code.GET_ERR, null, "查询失败");
         }
     }
 }

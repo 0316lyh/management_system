@@ -3,6 +3,7 @@ package com.lyh.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lyh.bean.Message;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @author :liangyuhang1
@@ -11,4 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface MessageDao extends BaseMapper<Message> {
+    @Select("select content from message where id = #{id}")
+    String getContentById(int id);
 }
