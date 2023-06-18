@@ -17,6 +17,13 @@ public interface InfoService {
     Result getById(int id);
 
     /**
+     * 根据登录用户Id(loginUserId)查信息
+     * @param id
+     * @return
+     */
+    Result getByLoginUserId(int id);
+
+    /**
      * 更改用户信息
      * @param info
      * @return
@@ -28,4 +35,11 @@ public interface InfoService {
      * @return
      */
     Result getAll();
+
+    /**
+     * 根据Id删除用户信息
+     * @param id
+     * @return
+     */
+    Result deleteById(int id);
 }

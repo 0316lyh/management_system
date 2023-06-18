@@ -22,4 +22,11 @@ public interface UserService {
      * @return
      */
     Result register(User user);
+
+    /**
+     * 根据Id删除用户
+     * @param id
+     * @return
+     */
+    Result deleteById(int id);
 }

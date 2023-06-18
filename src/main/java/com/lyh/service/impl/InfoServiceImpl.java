@@ -5,6 +5,7 @@ import com.lyh.controller.result.Code;
 import com.lyh.controller.result.Result;
 import com.lyh.dao.InfoDao;
 import com.lyh.service.InfoService;
+import com.lyh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,8 @@ import java.util.Map;
 public class InfoServiceImpl implements InfoService {
     @Autowired
     private InfoDao infoDao;
+    @Autowired
+    private UserService userService;
 
     /**
      * 根据ID查用户信息
@@ -30,11 +33,29 @@ public class InfoServiceImpl implements InfoService {
      */
     @Override
     public Result getById(int id) {
-        Info info = infoDao.getByUserId(id);
+        Info info1 = infoDao.selectById(id);
+
+        Info info = infoDao.getByUserId(info1.getUserId());
         if (info == null) {
             return new Result(Code.GET_ERR, null, "查询个人信息失败.");
         } else {
             return new Result(Code.GET_OK, info, "查询个人信息成功.");
+        }
+    }
+
+    /**
+     * 根据登录用户Id(loginUserId)查信息
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result getByLoginUserId(int id) {
+        Info byUserId = infoDao.getByUserId(id);
+        if (byUserId != null) {
+            return new Result(Code.GET_OK, byUserId, "查询成功");
+        } else {
+            return new Result(Code.GET_ERR, null, "查询失败");
         }
     }
 
@@ -50,7 +71,7 @@ public class InfoServiceImpl implements InfoService {
         if (i == 1) {
             return new Result(Code.UPDATE_OK, null, "更改信息成功");
         } else {
-            return new Result(Code.UPDATE_ERR,null,"更改信息失败!");
+            return new Result(Code.UPDATE_ERR, null, "更改信息失败!");
         }
     }
 
@@ -66,6 +87,26 @@ public class InfoServiceImpl implements InfoService {
             return new Result(Code.GET_OK, maps, "查询成功");
         } else {
             return new Result(Code.GET_ERR, null, "查询失败");
+        }
+    }
+
+    /**
+     * 根据Id删除用户信息
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result deleteById(int id) {
+        // 删除用户信息前先删除用户账号密码
+        Info info = infoDao.selectById(id);
+        Result result = userService.deleteById(info.getUserId());
+        // 删除用户(账号密码)
+        int i = infoDao.deleteById(info);
+        if (i == 1 && result.getCode() == 20021) {
+            return new Result(Code.DELETE_OK, null, "删除用户信息成功");
+        } else {
+            return new Result(Code.DELETE_ERR, null, "删除用户信息失败");
         }
     }
 }

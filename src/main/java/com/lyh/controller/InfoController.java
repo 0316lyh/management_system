@@ -25,12 +25,27 @@ public class InfoController {
      */
     @GetMapping("/{id}")
     public Result getById(@PathVariable int id) {
+        System.out.println(id);
         Result byId = infoService.getById(id);
         return byId;
     }
 
     /**
+     * 根据登录用户Id(loginUserId)查信息
+     *
+     * @param loginUserId
+     * @return
+     */
+    @GetMapping("/getByLoginUserId/{loginUserId}")
+    public Result getByLoginUserId(@PathVariable int loginUserId) {
+        Result byLoginUserId = infoService.getByLoginUserId(loginUserId);
+        return byLoginUserId;
+    }
+
+
+    /**
      * 更改用户信息
+     *
      * @param info
      * @return
      */
@@ -43,11 +58,19 @@ public class InfoController {
 
     /**
      * 获取所有员工信息
+     *
      * @return
      */
     @GetMapping
     public Result getAll() {
         Result all = infoService.getAll();
         return all;
+    }
+
+
+    @DeleteMapping("/{id}")
+    public Result deleteById(@PathVariable int id) {
+        Result result = infoService.deleteById(id);
+        return result;
     }
 }

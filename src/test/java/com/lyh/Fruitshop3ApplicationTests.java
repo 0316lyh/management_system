@@ -65,4 +65,11 @@ class Fruitshop3ApplicationTests {
         System.out.println(contentById.toString());
     }
 
+    @Test
+    void test2() {
+        // Bubble Sort
+
+
+
+    }
 }
