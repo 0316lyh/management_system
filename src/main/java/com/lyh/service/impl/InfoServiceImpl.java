@@ -1,6 +1,9 @@
 package com.lyh.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lyh.bean.Info;
+import com.lyh.bean.PageBean;
 import com.lyh.controller.result.Code;
 import com.lyh.controller.result.Result;
 import com.lyh.dao.InfoDao;
@@ -9,7 +12,6 @@ import com.lyh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -108,5 +110,20 @@ public class InfoServiceImpl implements InfoService {
         } else {
             return new Result(Code.DELETE_ERR, null, "删除用户信息失败");
         }
+    }
+
+    /**
+     * 根据分页查询员工信息
+     *
+     * @return
+     */
+    @Override
+    public Result getByPage(int pageSize, int currentPage) {
+        IPage page = new Page(currentPage,pageSize);
+        infoDao.selectPage(page, null);
+        PageBean<Info> infoPageBean = new PageBean<>();
+        infoPageBean.setTotal((int) page.getTotal());
+        infoPageBean.setList(page.getRecords());
+        return new Result(Code.GET_OK, infoPageBean, "分页查询成功");
     }
 }

@@ -4,7 +4,7 @@ package com.lyh.exception;
  * 系统异常类
  * @author :liangyuhang1
  * @className :SystemException
- * @date :2023/3/22/22:20
+ * @date :2023/6/7/22:20
  */
 public class SystemException extends RuntimeException {
     private int code;

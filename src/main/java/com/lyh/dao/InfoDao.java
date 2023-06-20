@@ -15,4 +15,5 @@ public interface InfoDao extends BaseMapper<Info> {
     @Select("select * from info where user_id = #{id}")
     Info getByUserId(int id);
 
+
 }

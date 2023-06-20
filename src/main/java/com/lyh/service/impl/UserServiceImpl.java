@@ -1,5 +1,6 @@
 package com.lyh.service.impl;
 
+import com.lyh.bean.ChangePasswordBean;
 import com.lyh.bean.Info;
 import com.lyh.bean.User;
 import com.lyh.controller.result.Code;
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 用户登陆
+     *
      * @param user
      * @return
      */
@@ -35,7 +37,7 @@ public class UserServiceImpl implements UserService {
         User user1 = userDao.getByUsernameAndPassword(user);
 
         if (user1 == null) {
-            return  new Result(Code.LOGIN_ERR,null,"账号或密码错误, 请重试");
+            return new Result(Code.LOGIN_ERR, null, "账号或密码错误, 请重试");
         } else {
             return new Result(Code.LOGIN_OK, user1.getId(), "登陆成功~~");
         }
@@ -45,8 +47,9 @@ public class UserServiceImpl implements UserService {
     /**
      * 这是一个用户注册的接口
      * 用户注册
+     *
      * @param user
-     * @return 
+     * @return
      */
     @Override
     public Result register(User user) {
@@ -69,6 +72,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据Id删除用户
+     *
      * @param id
      * @return
      */
@@ -80,5 +84,34 @@ public class UserServiceImpl implements UserService {
         } else {
             return new Result(Code.DELETE_ERR, null, "删除用户失败");
         }
+    }
+
+    /**
+     * 修改密码
+     *
+     * @param changePasswordBean
+     * @return
+     */
+    @Override
+    public Result changePassword(ChangePasswordBean changePasswordBean) {
+        String oldPassword = changePasswordBean.getOldPassword();
+        String newPassword = changePasswordBean.getNewPassword();
+        int loginUserID = changePasswordBean.getLoginUserId();
+
+        User user = userDao.selectById(loginUserID);
+
+        if (user == null) {
+            return new Result(Code.UPDATE_ERR, null, "原密码错误，请重试");
+        }
+
+
+        if (oldPassword.equals(user.getPassword())) {
+            // 如果用户输入的旧密码正确
+            user.setPassword(newPassword);
+            userDao.updateById(user);
+            return new Result(Code.UPDATE_OK, null, "修改密码成功");
+        }
+        // 旧密码错误
+        return new Result(Code.UPDATE_ERR, null, "原密码错误，请重试");
     }
 }

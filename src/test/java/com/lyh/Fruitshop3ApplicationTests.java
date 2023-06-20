@@ -68,8 +68,7 @@ class Fruitshop3ApplicationTests {
     @Test
     void test2() {
         // Bubble Sort
-
-
+        infoService.getByPage(3,1);
 
     }
 }

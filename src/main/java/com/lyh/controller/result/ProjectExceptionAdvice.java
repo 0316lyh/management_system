@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @author :liangyuhang1
  * 异常处理器类
  * @className :ProjectExceptionAdvice
- * @date :2023/3/19/22:58
+ * @date :2023/6/7/22:30
  */
 @RestControllerAdvice
 public class ProjectExceptionAdvice {

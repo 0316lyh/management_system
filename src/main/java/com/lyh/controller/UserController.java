@@ -1,14 +1,12 @@
 package com.lyh.controller;
 
+import com.lyh.bean.ChangePasswordBean;
 import com.lyh.bean.User;
 import com.lyh.controller.result.Code;
 import com.lyh.controller.result.Result;
 import com.lyh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author :liangyuhang1
@@ -41,6 +39,12 @@ public class UserController {
     public Result register(@RequestBody User user) {
         Result register = userService.register(user);
         return  register;
+    }
+
+    @PutMapping("/changePassword")
+    public Result changePassword(@RequestBody ChangePasswordBean changePasswordBean) {
+        Result result = userService.changePassword(changePasswordBean);
+        return result;
     }
 }
 

@@ -73,4 +73,15 @@ public class InfoController {
         Result result = infoService.deleteById(id);
         return result;
     }
+
+    /**
+     * 根据分页查询员工信息
+     *
+     * @return
+     */
+    @GetMapping("/{pageSize}/{currentPage}")
+    public Result getByPage(@PathVariable int pageSize, @PathVariable int currentPage) {
+        Result byPage = infoService.getByPage(pageSize, currentPage);
+        return byPage;
+    }
 }

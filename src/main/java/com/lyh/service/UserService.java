@@ -1,5 +1,6 @@
 package com.lyh.service;
 
+import com.lyh.bean.ChangePasswordBean;
 import com.lyh.bean.User;
 import com.lyh.controller.result.Result;
 
@@ -29,4 +30,6 @@ public interface UserService {
      * @return
      */
     Result deleteById(int id);
+
+    Result changePassword(ChangePasswordBean changePasswordBean);
 }
