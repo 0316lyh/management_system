@@ -2,6 +2,7 @@ package com.lyh.exception;
 
 /**
  * 业务异常类
+ *
  * @author :liangyuhang1
  * @className :SystemException
  * @date :2023/6/7/22:20
@@ -30,6 +31,5 @@ public class BusinessException extends RuntimeException {
         super(message, cause);
         this.code = code;
     }
-
 
 }

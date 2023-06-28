@@ -41,10 +41,14 @@ public class UserController {
         return  register;
     }
 
+    /**
+     * 修改密码
+     * @param changePasswordBean
+     * @return
+     */
     @PutMapping("/changePassword")
     public Result changePassword(@RequestBody ChangePasswordBean changePasswordBean) {
         Result result = userService.changePassword(changePasswordBean);
         return result;
     }
 }
-

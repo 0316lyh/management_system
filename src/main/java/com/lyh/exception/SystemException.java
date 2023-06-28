@@ -31,5 +31,4 @@ public class SystemException extends RuntimeException {
         this.code = code;
     }
 
-
 }
