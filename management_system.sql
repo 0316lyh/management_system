@@ -39,14 +39,14 @@ CREATE TABLE `info`  (
 -- ----------------------------
 -- Records of info
 -- ----------------------------
-INSERT INTO `info` VALUES (1, 1, '梁宇航111', 20, '男', 'lyh0316@gmail.com', '广东省湛江市', '13590016606', '/public/image/avatar/1.jpg', '维修部', '2003-07-01');
-INSERT INTO `info` VALUES (2, 2, '梁宇航22', 21, '女', '2222@gamil.com', '广东省茂名市', '13590016606', '/public/image/avatar/u=4143007323,1329348336&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '2002-03-16');
-INSERT INTO `info` VALUES (3, 3, '梁宇航333', 21, '女', '3333@gami.com', '广东省湛江市', '12345678910', '/public/image/avatar/3.jpg', '开发部', '2002-06-21');
-INSERT INTO `info` VALUES (8, 36, '梁宇航6606', 26, '男', 'xxx@qq.com', '广东省茂名市', '15235478523', '/public/image/avatar/6606.png', '人事部', '1997-06-06');
-INSERT INTO `info` VALUES (9, 37, '梁宇航7707', 31, '男', '7707@gmail.com', '7707地址', '14752836925', '/public/image/avatar/u=4278216090,542028317&fm=253&fmt=auto&app=138&f=JPEG.webp', '7707部门', '1992-07-07');
-INSERT INTO `info` VALUES (11, 39, '梁宇航8808', 30, '男', '8808@gmail.com', '8808地址', '13256987420', '/public/image/avatar/u=1480477398,122818281&fm=253&fmt=auto&app=138&f=JPEG.webp', '8808部门', '1993-08-08');
-INSERT INTO `info` VALUES (12, 40, '梁宇航999', 36, '男', '9999@gmail.com', '福建省福州市', '13590014978', '/public/image/avatar/u=303985922,2393202422&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '1987-06-21');
-INSERT INTO `info` VALUES (13, 41, '梁宇航10', 24, '男', '20425410@gami.com', '广东省东莞市', '12345678910', '/public/image/avatar/u=303985922,2393202422&fm=253&fmt=auto&app=138&f=JPEG.webp', '开发部', '1999-06-22');
+INSERT INTO `info` VALUES (1, 1, 'lyh111', 20, '男', 'lyh0316@gmail.com', '广东省湛江市', '13590016606', '/public/image/avatar/1.jpg', '维修部', '2003-07-01');
+INSERT INTO `info` VALUES (2, 2, 'lyh22', 21, '女', '2222@gamil.com', '广东省茂名市', '13590016606', '/public/image/avatar/u=4143007323,1329348336&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '2002-03-16');
+INSERT INTO `info` VALUES (3, 3, 'lyh333', 21, '女', '3333@gami.com', '广东省湛江市', '12345678910', '/public/image/avatar/3.jpg', '开发部', '2002-06-21');
+INSERT INTO `info` VALUES (8, 36, 'lyh6606', 26, '男', 'xxx@qq.com', '广东省茂名市', '15235478523', '/public/image/avatar/6606.png', '人事部', '1997-06-06');
+INSERT INTO `info` VALUES (9, 37, 'lyh7707', 31, '男', '7707@gmail.com', '7707地址', '14752836925', '/public/image/avatar/u=4278216090,542028317&fm=253&fmt=auto&app=138&f=JPEG.webp', '7707部门', '1992-07-07');
+INSERT INTO `info` VALUES (11, 39, 'lyh8808', 30, '男', '8808@gmail.com', '8808地址', '13256987420', '/public/image/avatar/u=1480477398,122818281&fm=253&fmt=auto&app=138&f=JPEG.webp', '8808部门', '1993-08-08');
+INSERT INTO `info` VALUES (12, 40, 'lyh999', 36, '男', '9999@gmail.com', '福建省福州市', '13590014978', '/public/image/avatar/u=303985922,2393202422&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '1987-06-21');
+INSERT INTO `info` VALUES (13, 41, 'lyh10', 24, '男', '20425410@gami.com', '广东省东莞市', '12345678910', '/public/image/avatar/u=303985922,2393202422&fm=253&fmt=auto&app=138&f=JPEG.webp', '开发部', '1999-06-22');
 INSERT INTO `info` VALUES (17, 45, '张三', 21, '男', 'zhangsan@qq.com', '浙江省杭州市', '15234567218', '/public/image/avatar/u=3304822103,1045554583&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '2002-06-12');
 INSERT INTO `info` VALUES (18, 46, '李四', 25, '男', 'lisi@163.com', '广东省深圳市', '13542514263', '/public/image/avatar/u=2567150411,4263054107&fm=253&fmt=auto&app=138&f=JPEG.webp', '人事部', '1998-06-12');
 INSERT INTO `info` VALUES (19, 47, '王五', 18, '女', 'wangwu@outlook.com', '广东省佛山市', '15347525632', '/public/image/avatar/u=1793195527,385418102&fm=253&fmt=auto&app=138&f=JPEG.webp', '人事部', '2005-06-04');
@@ -85,12 +85,12 @@ CREATE TABLE `message`  (
 -- ----------------------------
 -- Records of message
 -- ----------------------------
-INSERT INTO `message` VALUES (39, '梁宇航1', '13590016606', '留意1');
+INSERT INTO `message` VALUES (39, 'lyh1', '13590016606', '留意1');
 INSERT INTO `message` VALUES (40, '张三', '13590017707', '留意from张三...');
 INSERT INTO `message` VALUES (41, '李四', '13590018808', '留言from李四...');
 INSERT INTO `message` VALUES (44, '王五', '13590099059', '留言from王五...');
 INSERT INTO `message` VALUES (45, '赵六', '13590012060', '留言from赵六');
-INSERT INTO `message` VALUES (49, '梁宇航11', '6606', '留言from梁宇航111');
+INSERT INTO `message` VALUES (49, 'lyh11', '6606', '留言from梁宇航111');
 
 -- ----------------------------
 -- Table structure for news
