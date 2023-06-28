@@ -39,8 +39,8 @@ CREATE TABLE `info`  (
 -- ----------------------------
 -- Records of info
 -- ----------------------------
-INSERT INTO `info` VALUES (1, 1, 'lyh111', 20, '男', 'lyh0316@gmail.com', '广东省湛江市', '13590016606', '/public/image/avatar/1.jpg', '维修部', '2003-07-01');
-INSERT INTO `info` VALUES (2, 2, 'lyh22', 21, '女', '2222@gamil.com', '广东省茂名市', '13590016606', '/public/image/avatar/u=4143007323,1329348336&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '2002-03-16');
+INSERT INTO `info` VALUES (1, 1, 'lyh111', 20, '男', 'lyh0316@gmail.com', '广东省湛江市', '13590016666', '/public/image/avatar/1.jpg', '维修部', '2003-07-01');
+INSERT INTO `info` VALUES (2, 2, 'lyh22', 21, '女', '2222@gamil.com', '广东省茂名市', '13590016666', '/public/image/avatar/u=4143007323,1329348336&fm=253&fmt=auto&app=138&f=JPEG.webp', '维修部', '2002-03-16');
 INSERT INTO `info` VALUES (3, 3, 'lyh333', 21, '女', '3333@gami.com', '广东省湛江市', '12345678910', '/public/image/avatar/3.jpg', '开发部', '2002-06-21');
 INSERT INTO `info` VALUES (8, 36, 'lyh6606', 26, '男', 'xxx@qq.com', '广东省茂名市', '15235478523', '/public/image/avatar/6606.png', '人事部', '1997-06-06');
 INSERT INTO `info` VALUES (9, 37, 'lyh7707', 31, '男', '7707@gmail.com', '7707地址', '14752836925', '/public/image/avatar/u=4278216090,542028317&fm=253&fmt=auto&app=138&f=JPEG.webp', '7707部门', '1992-07-07');
