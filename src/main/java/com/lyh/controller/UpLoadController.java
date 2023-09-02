@@ -97,8 +97,8 @@ public class UpLoadController {
         String fileName = file.getOriginalFilename();
         String objectName = "avatar/" + fileName;
 
-        String accessKeyId = "LTAI5tLJdTNNcjCvsNDQBVsi";
-        String secretAccessKey = "tDeBInK6j8hecAJQnEPm8lwdFEcHMG";
+        String accessKeyId = "xxxxxxxxxxxxx";
+        String secretAccessKey = "xxxxxxxxxxxxxxxxx";
 
         // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, secretAccessKey);
